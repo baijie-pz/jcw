@@ -1,0 +1,11 @@
+$max-width: 1920px;
+$min-width: 1200px;
+
+@mixin safe-center {
+  width: $min-width;
+  height: 100%;
+  max-width: $max-width;
+  min-width: $min-width;
+  margin: 0 auto;
+  position: relative;
+}
