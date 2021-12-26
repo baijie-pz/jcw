@@ -1,9 +1,7 @@
 <template>
     <div class="tag-wrap-block">
-        <i :class="[triangleWhite ? 'triangle-white' : 'triangle']" :style="{left: triangleLeft}"></i>
         <div class="tag-wrap">
             <span v-for="(item, idx) in classList" :key="idx" :class="[{ 'active': idx == active },'tag']" @click="selected(idx)">{{item.name}}</span>
-            <router-link v-if="to" :to="to" class="tag more-tag">更多分类&gt;&gt;</router-link>
         </div>
     </div>
 </template>
@@ -11,8 +9,6 @@
 <script>
 export default {
     props: {
-        triangleWhite: Boolean,
-        to: Object,
         classList: Array,
         topClassActiveIdx: Number
     },
@@ -62,7 +58,7 @@ export default {
 
         },
         selected(idx) {
-          this.active = idx;
+            this.active = idx;
         }
     }
 }
@@ -70,64 +66,28 @@ export default {
 
 <style lang="scss" scoped>
 .tag-wrap-block {
-    position: relative;
-    margin-top: 20px;
-    background-color: #F5F5F5;
-    .triangle {
-        position: absolute;
-        top: -40px;
-        left: 182px;
-        &::before {
-            content: "";
-            width: 0;
-            height: 0;
-            border-width: 20px 14px;
-            border-style: solid;
-            border-color: transparent transparent #F5F5F5 transparent;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    }
-    .triangle-white {
-        position: absolute;
-        top: -40px;
-        left: 180px;
-        &::before {
-            content: "";
-            width: 0;
-            height: 0;
-            border-width: 20px 14px;
-            border-style: solid;
-            border-color: transparent transparent #fff transparent;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    }
+    margin-top: 30px;
     .tag-wrap {
-        width: 100%;
+        background-color: #F5F5F5;
+        border-radius: 10px;
+        padding: 10px 32px 30px 32px;
         box-sizing: border-box;
-        padding: 6px 37px 36px;
         font-size: 0;
         position: relative;
         .tag {
-            width: 200px;
-            height: 60px;
+            display: inline-block;
+            width: 150px;
+            height: 40px;
+            background-color: #F5F5F5;
             border: 1px solid #CCCCCC;
             border-radius: 10px;
-            text-align: center;
-            line-height: 60px;
-            display: inline-block;
-            box-sizing: border-box;
-            margin-top: 30px;
-            font-size: 24px;
-            font-weight: 500;
+            font-size: 17px;
             color: #404040;
-            cursor: pointer;
-            user-select: none;
-            margin-right: 31px;
-            &:nth-child(5n+5) {
+            text-align: center;
+            line-height: 40px;
+            margin-top: 20px;
+            margin-right: 44px;
+            &:nth-child(6n+6) {
                 margin-right: 0;
             }
             &:hover {
@@ -138,12 +98,6 @@ export default {
         .active {
             color: #EF8E3F;
             border-color: #EF8E3F;
-        }
-        .more-tag {
-            background-color: #FFF2E7;
-            border: 1px solid #FFDABB;
-            font-weight: bold;
-            color: #EF8E3F;
         }
     }
 }

@@ -1,12 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import BasicLayout from '@/components/Layout/basic';
-import { Home, Search } from '@/page';
+import {
+  Home,
+  Search,
+  Video,
+  VideoDetail,
+  Jmy,
+  Photo,
+  PhotoDetail,
+  Marketing
+} from '@/page';
+// console.log(VideoDetail, 'VideoDetail');
 
-console.log(Home ,'home')
 const routes = [
   {
     path: '/',
-    redirect: { name: 'home' }
+    redirect: {
+      name: 'home'
+    }
   },
   {
     path: '/index',
@@ -22,24 +33,46 @@ const routes = [
         path: 'search/:searchValue?',
         name: 'search',
         component: Search,
-        // props: true
+        props: true
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
       },
       {
-        path: 'videos',
-        name: 'videos',
-        component: Search,
+        path: 'video',
+        name: 'video',
+        component: Video
+      },
+      {
+        path: 'video/:id',
+        name: 'videoDetail',
+        component: VideoDetail,
+        props: true
       },
       {
         path: 'jmy',
         name: 'jmy',
-        component: Search,
+        component: Jmy,
+      },
+      {
+        path: 'photo',
+        name: 'photo',
+        component: Photo,
+      },
+      {
+        path: 'photo/:id',
+        name: 'photoDetail',
+        component: PhotoDetail,
+        props: true
+      },
+      {
+        path: 'marketing',
+        name: 'marketing',
+        component: Marketing,
       }
     ]
-  }
+  },
   // {
   //   path: '/about',
   //   name: 'About',
@@ -48,6 +81,7 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   // }
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: Home },
 ]
 
 const router = createRouter({

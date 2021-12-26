@@ -2,40 +2,37 @@
     <header class="header">
         <div class="nav-wrap">
             <div class="content">
-                <a href="" class="logo-wrap">
-                                                         <img src="../../assets/images/logo.png" alt="" class="logo">
-                                                     </a>
+                <a href="" class="logo-wrap"><img src="../../assets/images/logo.png" alt="" class="logo"></a>
                 <ul class="nav-wrap clear">
                     <li>
-                        <router-link to="/index/home">主页</router-link>
+                        <router-link to="/index" exact-path>主页</router-link>
                     </li>
                     <li>
-                        <router-link to="/index/video">视频案例</router-link>
+                        <router-link to="/index/video" exact-path>视频案例</router-link>
                     </li>
                     <li>
-                        <router-link to="/index/jmy">基木鱼单页</router-link>
+                        <router-link to="/index/jmy" exact-path>基木鱼单页</router-link>
                     </li>
                     <li>
-                        <router-link to="/index/photo">图片案例</router-link>
+                        <router-link to="/index/photo" exact-path>图片案例</router-link>
                     </li>
                     <li>
-                        <router-link to="/index/marketing">营销案例</router-link>
+                        <router-link to="/index/marketing" exact-path>营销案例</router-link>
                     </li>
                     <li>
-                        <router-link to="/contact">联系我们</router-link>
+                        <router-link to="/contact" exact-path>联系我们</router-link>
                     </li>
                 </ul>
             </div>
         </div>
     
-        <section class="search-wrap">
+        <section :class="[isHome ? '' : 'small-bg','search-wrap']">
             <div class="content">
                 <div class="input-wrap-block">
                     <div class="input-wrap">
                         <img src="../../assets/images/icon_search.png" alt="" class="icon">
                         <input type="text" class="input" placeholder="请输入关键词或案例编号" v-model="searchValue">
-                        <a class="search-btn">搜索一下</a>
-                        <router-link :to="{ name: 'search', params: { 'searchValue': searchValue }}" class="search-btn">联系我们</router-link>
+                        <router-link :to="{ path: '/index/search', params: { 'searchValue': searchValue }}" class="search-btn">搜索一下</router-link>
                     </div>
                     <p class="descr">
                         <span>海</span>
@@ -59,9 +56,17 @@
 export default {
     data() {
         return {
-            searchValue: ''
+            searchValue: '',
+            isHome: false
         }
-    }
+    },
+    created() {
+        var currentRoute = this.$router.currentRoute.value;
+        if (currentRoute.name == 'home') {
+            this.isHome = true;
+        }
+    },
+    methods: {}
 }
 </script>
 
@@ -107,7 +112,7 @@ export default {
                     .active {
                         color: #EF8E3F;
                     }
-                    .router-link-active {
+                    .router-link-exact-active {
                         color: #EF8E3F;
                     }
                 }
@@ -189,6 +194,10 @@ export default {
                 }
             }
         }
+    }
+    .small-bg {
+        height: 200px;
+        background: url(../../assets/images/search_bg_2.png) center center no-repeat; // background-size: cover;
     }
 }
 </style>

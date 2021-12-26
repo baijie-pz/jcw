@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import vueRouter from 'vue-router';
+// import vueRouter from 'vue-router';
 export default {
-    beforeRouteEnter(to, from) {
-        console.log(to, 'to', from,vueRouter);
-        // if (!to.params.searchValue) {
-        //     this.$router.back();
-        // }
-    },
+    // beforeRouteEnter(to, from) {
+    //     console.log(to, 'to', from,vueRouter);
+    //     // if (!to.params.searchValue) {
+    //     //     this.$router.back();
+    //     // }
+    // },
     props: ['searchValue'],
     components: {},
     data() {

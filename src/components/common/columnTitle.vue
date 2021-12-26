@@ -11,7 +11,7 @@ export default {
       titleObj: Object
     },
     created() {
-      console.log(this.titleObj.title, 'titleobj');
+    //   console.log(this.titleObj.title, 'titleobj');
     },
 }
 </script>

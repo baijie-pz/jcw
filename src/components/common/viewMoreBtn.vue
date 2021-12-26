@@ -13,7 +13,7 @@ export default {
         }
     },
     created() {
-        console.log(this.to, 'routeObj');
+        // console.log(this.to, 'routeObj');
     },
     computed: {
     },

@@ -17,7 +17,7 @@ export default {
         itemList: Object
     },
     created() {
-        console.log(this.itemList, 'itemList');
+        // console.log(this.itemList, 'itemList');
     },
 }
 </script>
