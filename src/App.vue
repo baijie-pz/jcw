@@ -17,5 +17,9 @@ export default {
 @import "./style/common";
 html body {
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑", "MicrosoftJhengHei", "华文细黑", "STHeiti", "MingLiu";
+    #app {
+      width: 100vw;
+      height: 100vh;
+    }
 }
 </style>

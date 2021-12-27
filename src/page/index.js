@@ -6,6 +6,7 @@ import Jmy from "./jmy/jmy";
 import Photo from "./photo/photo";
 import PhotoDetail from "./photo/photoDetail";
 import Marketing from "./marketing/marketing";
+import Login from "./login/login";
 
 
 
@@ -17,5 +18,6 @@ export {
   Jmy,
   Photo,
   Marketing,
-  PhotoDetail
+  PhotoDetail,
+  Login
 }

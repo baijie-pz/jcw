@@ -8,7 +8,8 @@ import {
   Jmy,
   Photo,
   PhotoDetail,
-  Marketing
+  Marketing,
+  Login
 } from '@/page';
 // console.log(VideoDetail, 'VideoDetail');
 
@@ -18,6 +19,10 @@ const routes = [
     redirect: {
       name: 'home'
     }
+  },
+  {
+    path: '/login',
+    component: Login
   },
   {
     path: '/index',
