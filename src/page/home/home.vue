@@ -196,6 +196,9 @@ export default {
             }
         }
     },
+    mounted() {
+        console.log(process.env.NODE_ENV , 'process.env.NODE_ENV ');
+    },
     methods: {
       topClassSelected(activeObj) {
         // console.log(activeObj, 'topClassSelected');

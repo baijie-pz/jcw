@@ -8,10 +8,11 @@ const LoadingInstance = {
   _target: null,
   _count: 0
 };
-
+let baseURL = process.env.NODE_ENV == 'development' ? '' : '';
+console.log(process.env.NODE_ENV , 'process.env.NODE_ENV ');
 function myAxios(axiosConfig, customOptions, loadingOptions) {
   const service = axios.create({
-    baseURL: 'http://localhost:8888', // 设置统一的请求前缀
+    baseURL: baseURL, // 设置统一的请求前缀
     timeout: 10000, // 设置统一的超时时长
   });
 
