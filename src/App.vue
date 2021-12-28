@@ -18,8 +18,8 @@ export default {
 html body {
     font-family: "Source Han Sans CN", "Microsoft YaHei", "微软雅黑", "MicrosoftJhengHei", "华文细黑", "STHeiti", "MingLiu";
     #app {
-      width: 100vw;
+      width: 100%;
       height: 100vh;
-    }
+    } 
 }
 </style>

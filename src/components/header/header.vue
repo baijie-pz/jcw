@@ -20,13 +20,13 @@
                         <router-link to="/index/marketing" exact-path>营销案例</router-link>
                     </li>
                     <li>
-                        <router-link to="/contact" exact-path>联系我们</router-link>
+                        <router-link to="/index/contact-us" exact-path>联系我们</router-link>
                     </li>
                 </ul>
             </div>
         </div>
     
-        <section :class="[isHome ? '' : 'small-bg','search-wrap']">
+        <section v-if="searchStatus" :class="[isHome ? '' : 'small-bg','search-wrap']">
             <div class="content">
                 <div class="input-wrap-block">
                     <div class="input-wrap">
@@ -57,6 +57,7 @@ export default {
     data() {
         return {
             searchValue: '',
+            searchStatus: true,
             isHome: false
         }
     },
@@ -65,6 +66,9 @@ export default {
         if (currentRoute.name == 'home') {
             this.isHome = true;
         }
+        const { meta } = this.$router.currentRoute.value;
+        console.log(this.$router.currentRoute.value,meta, 'router');
+        this.searchStatus = meta ? meta.searchStatus : true;
     },
     methods: {}
 }

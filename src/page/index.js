@@ -6,18 +6,20 @@ import Jmy from "./jmy/jmy";
 import Photo from "./photo/photo";
 import PhotoDetail from "./photo/photoDetail";
 import Marketing from "./marketing/marketing";
+import ContactUs from "./contact/contact";
 import Login from "./login/login";
 
 
 
 export {
-  Home,
-  Search,
-  Video,
-  VideoDetail,
-  Jmy,
-  Photo,
-  Marketing,
-  PhotoDetail,
-  Login
+    Home,
+    Search,
+    Video,
+    VideoDetail,
+    Jmy,
+    Photo,
+    Marketing,
+    PhotoDetail,
+    ContactUs,
+    Login
 }
